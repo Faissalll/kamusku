@@ -10,22 +10,35 @@
 <?import javafx.scene.text.Text?>
 
 <Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.kamusfx.Controller">
-    <VBox alignment="CENTER" layoutX="123.0" layoutY="41.0" prefHeight="318.0" prefWidth="354.0" spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1d">
-      <HBox prefHeight="100.0" prefWidth="200.0" />
-      <Text fill="#3031c2" strokeType="OUTSIDE" strokeWidth="0.0" text="KamusKu">
-         <font>
-            <Font name="Poppins Black" size="40.0" />
-         </font>
-      </Text>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cari kata" />
+    <VBox alignment="CENTER" layoutX="123.0" layoutY="41.0" prefHeight="318.0" prefWidth="354.0" spacing="15">
+        <!-- Judul -->
+        <Text fill="#3031c2" strokeType="OUTSIDE" strokeWidth="0.0" text="KamusKu">
+            <font>
+                <Font name="Poppins Black" size="40.0" />
+            </font>
+        </Text>
+
+        <!-- Instruksi -->
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cari kata" />
+
+        <!-- Input untuk kata -->
         <TextField fx:id="searchField" promptText="Masukkan kata...">
-         <font>
-            <Font name="Poppins Regular" size="12.0" />
-         </font></TextField>
-        <Button fx:id="searchButton" onAction="#searchWord" text="Search" />
-      <Text layoutX="164.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terjemahan" />
+            <font>
+                <Font name="Poppins Regular" size="12.0" />
+            </font>
+        </TextField>
+
+        <!-- Pilihan Bahasa -->
+        <HBox alignment="CENTER" spacing="10">
+            <Button fx:id="indToEngButton" onAction="#setIndoToEng" text="Indo → Eng" />
+            <Button fx:id="engToIndButton" onAction="#setEngToInd" text="Eng → Indo" />
+        </HBox>
+
+        <!-- Tombol Search -->
+        <Button fx:id="searchButton" onAction="#searchWord" text="Cari" />
+
+        <!-- Hasil Terjemahan -->
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Terjemahan" />
         <TextArea fx:id="resultArea" editable="false" />
     </VBox>
-
-
 </Pane>

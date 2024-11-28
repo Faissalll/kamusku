@@ -27,7 +27,7 @@ public class RedBlackTree {
         return current;
     }
 
-    // Pencarian kata dalam tree
+    // Penerjemahan berdasarkan pilihan bahasa
     public String translate(String word) {
         Node current = root;
         while (current != null) {
@@ -36,7 +36,19 @@ public class RedBlackTree {
             }
             current = word.compareTo(current.getKey()) < 0 ? current.getLeft() : current.getRight();
         }
-        return "Translation not found.";
+        return null;
+    }
+
+    // Penerjemahan balik: Inggris → Indonesia
+    public String translateReverse(String word) {
+        Node current = root;
+        while (current != null) {
+            if (word.equals(current.getValue())) {
+                return current.getKey();
+            }
+            current = word.compareTo(current.getValue()) < 0 ? current.getLeft() : current.getRight();
+        }
+        return null;
     }
 
     // Mendapatkan kata acak dari tree
